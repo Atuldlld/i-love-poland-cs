@@ -1,0 +1,8 @@
+"cs-mini"
+{
+	"base"				"fretta15"
+	"title"				"Counter-Strike Mini"
+	"menusystem"		"1"
+	"maps"				""
+	
+}
