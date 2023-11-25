@@ -1,148 +1,96 @@
-if (SERVER) then
-
-	SWEP.Weight				= 5
-	SWEP.AutoSwitchTo		= false
-	SWEP.AutoSwitchFrom		= false
-end
-
 if ( CLIENT ) then
-	SWEP.PrintName			= "Knife"	
-	SWEP.Author	= "oTvErTkA"
-	SWEP.DrawAmmo 			= false
-	SWEP.DrawCrosshair 		= true
-	SWEP.ViewModelFOV		= 77
-	SWEP.ViewModelFlip		= false
-	SWEP.CSMuzzleFlashes	= true
-	
-	SWEP.Slot				= 2
-	SWEP.SlotPos			= 3
-	SWEP.IconLetter			= "j"
 
-	killicon.AddFont("weapon_knife", "CSKillIcons", SWEP.IconLetter, Color( 255, 80, 0, 255 ))
-	surface.CreateFont("CSKillIcons", {font = "csd", size = ScreenScale(30), weight = 500, antialias = true, additive = true})
-	surface.CreateFont("CSSelectIcons", {font = "csd", size = ScreenScale(60), weight = 500, antialias = true, additive = true})
+	SWEP.Slot				= 2
+	SWEP.SlotPos			= 1
+	SWEP.IconLetterCSS 		= "j"
+
+	killicon.AddFont( "weapon_knife", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ))
+	SWEP.BounceWeaponIcon = false
 end
 
-SWEP.Category				= "Counter-Strike Mini1"
+local DrawSound 				= Sound ("weapons/knife/knife_deploy1.wav");
+local SwingSound 				= Sound ("weapons/iceaxe/iceaxe_swing1.wav");
 
-SWEP.Spawnable				= true
-SWEP.AdminSpawnable			= true
 
-SWEP.ViewModel 				= "models/weapons/cstrike/c_knife_t.mdl"
-SWEP.WorldModel 			= "models/weapons/w_knife_t.mdl" 
+
+SWEP.PrintName = "Knife"
+SWEP.Category = "Counter-Strike Mini"
+SWEP.Author	= "oTvErTkA"
+SWEP.Spawnable= true
+SWEP.AdminSpawnable= true
+SWEP.AdminOnly = false
+
+SWEP.ViewModelFOV = 55
+SWEP.ViewModel = "models/weapons/cstrike/c_knife_t.mdl"
+SWEP.WorldModel = "models/weapons/w_knife_t.mdl"
+SWEP.ViewModelFlip = false
+SWEP.BobScale = 1
+SWEP.SwayScale = 0
+
+SWEP.AutoSwitchTo = false
+SWEP.AutoSwitchFrom = false
+SWEP.Weight = 1
+SWEP.Slot = 2
+SWEP.SlotPos = 0
 
 SWEP.UseHands = true
-SWEP.DrawWeaponInfoBox  	= false
-
-SWEP.Weight					= 5
-SWEP.AutoSwitchTo			= false
-SWEP.AutoSwitchFrom			= false
-
-SWEP.Primary.ClipSize			= -1
-SWEP.Primary.Damage				= -1
-SWEP.Primary.DefaultClip		= -1
-SWEP.Primary.Automatic			= true
-SWEP.Primary.Ammo				= "none"
+SWEP.HoldType = "knife"
+SWEP.FiresUnderwater = true
+SWEP.DrawCrosshair = true
+SWEP.DrawAmmo = true
+SWEP.CSMuzzleFlashes = 1
+SWEP.Base = "weapon_base"
 
 
-SWEP.Secondary.ClipSize			= -1
-SWEP.Secondary.DefaultClip		= -1
-SWEP.Secondary.Damage			= -1
-SWEP.Secondary.Automatic		= true
-SWEP.Secondary.Ammo				= "none"
+SWEP.Attack = 0
+SWEP.AttackTimer = CurTime()
+SWEP.Idle = 0
+SWEP.IdleTimer = CurTime()
 
-/*---------------------------------------------------------
-Think
----------------------------------------------------------*/
-function SWEP:Think()
-if self.Idle and CurTime()>=self.Idle then
-self.Idle = nil
-self.Weapon:SendWeaponAnim( ACT_VM_IDLE )
+SWEP.Primary.Sound = Sound( "" )
+SWEP.Primary.ClipSize = -1
+SWEP.Primary.DefaultClip = -1
+SWEP.Primary.Automatic = false
+SWEP.Primary.Ammo = "none"
+SWEP.Primary.Damage = 40
+SWEP.Primary.Delay = 0.4
+SWEP.Primary.Force = 2000
+
+SWEP.Secondary.ClipSize = -1
+SWEP.Secondary.DefaultClip = -1
+SWEP.Secondary.Automatic = false
+SWEP.Secondary.Ammo = "none"
+
+
+function SWEP:Initialize()
+	self:SetWeaponHoldType(self.HoldType)
+	if ( SERVER ) then
+		self:SetWeaponHoldType(self.HoldType)
+	end
 end
-end
 
-/*---------------------------------------------------------
-Initialize
----------------------------------------------------------*/
-function SWEP:Initialize() 
-	self:SetWeaponHoldType( "knife" ) 	 
-end 
-
-/*---------------------------------------------------------
-Deploy
----------------------------------------------------------*/
 function SWEP:Deploy()
-	self.Idle = CurTime() + self.Owner:GetViewModel():SequenceDuration()
-	self.Weapon:SendWeaponAnim( ACT_VM_DRAW )
-	self.Weapon:SetNextPrimaryFire(CurTime() + self.Owner:GetViewModel():SequenceDuration())
-	self.Weapon:SetNextSecondaryFire(CurTime() + self.Owner:GetViewModel():SequenceDuration())
-	self.Weapon:EmitSound( "Weapon_Knife.Deploy" )
-	return true
+	self.Weapon:SendWeaponAnim(ACT_VM_DRAW)
+	self.Weapon:EmitSound( DrawSound )
 end
 
-/*---------------------------------------------------------
-PrimaryAttack
----------------------------------------------------------*/
+function SWEP:Holster()
+   --self.Weapon:EmitSound( DrawSound )
+   return true
+end
+
 function SWEP:PrimaryAttack()
+self:EmitSound( SwingSound )
+self.Weapon:SendWeaponAnim( ACT_VM_PRIMARYATTACK )
+self.Owner:SetAnimation( PLAYER_ATTACK1 )
+self:SetNextPrimaryFire( CurTime() + self.Primary.Delay )
+self:SetNextSecondaryFire( CurTime() + self.Primary.Delay )
+self.Attack = 1
+self.AttackTimer = CurTime() + 0.2
+self.Idle = 0
+self.IdleTimer = CurTime() + self.Owner:GetViewModel():SequenceDuration()
 
-	local tr = {}
-	tr.start = self.Owner:GetShootPos()
-	tr.endpos = self.Owner:GetShootPos() + ( self.Owner:GetAimVector() * 80 )
-	tr.filter = self.Owner
-	tr.mask = MASK_SHOT
-	local trace = util.TraceLine( tr )
 
-	self.Weapon:SetNextPrimaryFire(CurTime() + 0.4)
-	self.Weapon:SetNextSecondaryFire(CurTime() + 1)
-	self.Owner:SetAnimation( PLAYER_ATTACK1 )
-
-	if ( trace.Hit ) then
-
-	local DamageMath = math.random(0,5)
-
-	if DamageMath == 3 then
-
-		dmg = 25  --20
-	else
-
-		dmg = 20  --15
-	end
-
-		if trace.Entity:IsPlayer() or trace.Entity:IsNPC() then
-			self.Weapon:SetNextPrimaryFire(CurTime() + 0.5)
-			self.Weapon:SendWeaponAnim(ACT_VM_PRIMARYATTACK)
-			self.Idle = CurTime() + self.Owner:GetViewModel():SequenceDuration()
-			bullet = {}
-			bullet.Num    = 1
-			bullet.Src    = self.Owner:GetShootPos()
-			bullet.Dir    = self.Owner:GetAimVector()
-			bullet.Spread = Vector(0, 0, 0)
-			bullet.Tracer = 0
-			bullet.Force  = 1
-			bullet.Damage = dmg
-			self.Owner:FireBullets(bullet) 
-			self.Weapon:EmitSound( "Weapon_Knife.Hit" )
-		else
-			bullet = {}
-			bullet.Num    = 1
-			bullet.Src    = self.Owner:GetShootPos()
-			bullet.Dir    = self.Owner:GetAimVector()
-			bullet.Spread = Vector(0, 0, 0)
-			bullet.Tracer = 0
-			bullet.Force  = 1
-			bullet.Damage = dmg
-			self.Owner:FireBullets(bullet)
-			self.Weapon:SetNextPrimaryFire(CurTime() + 0.5)
-			self.Weapon:SendWeaponAnim(ACT_VM_PRIMARYATTACK)
-			self.Idle = CurTime() + self.Owner:GetViewModel():SequenceDuration()
-			self.Weapon:EmitSound( "Weapon_Knife.HitWall" )
-
-		end
-	else
-		self.Weapon:EmitSound("Weapon_Knife.Slash")
-		self.Weapon:SendWeaponAnim(ACT_VM_PRIMARYATTACK)
-		self.Idle = CurTime() + self.Owner:GetViewModel():SequenceDuration()
-	end
 end
 
 function SWEP:EntityFaceBack(ent)
@@ -152,9 +100,6 @@ function SWEP:EntityFaceBack(ent)
 	return false
 end
 
-/*---------------------------------------------------------
-Reload
----------------------------------------------------------*/
 function SWEP:SecondaryAttack()
 
 	local tr = {}
@@ -176,7 +121,7 @@ function SWEP:SecondaryAttack()
 
 		damage = 195
 	else
-		damage = 65
+		damage = 95
 
 	end
 
@@ -191,7 +136,7 @@ function SWEP:SecondaryAttack()
 			bullet.Tracer = 0
 			bullet.Force  = 1
 			bullet.Damage = damage
-			self.Owner:FireBullets(bullet) 
+			self.Owner:FireBullets(bullet)
 			self.Weapon:EmitSound( "Weapon_Knife.Stab" )
 		else
 			bullet = {}
@@ -216,90 +161,66 @@ function SWEP:SecondaryAttack()
 	end
 end
 
-/*---------------------------------------------------------
-Reload
----------------------------------------------------------*/
 function SWEP:Reload()
-
-	return false
 end
 
-/*---------------------------------------------------------
-OnRemove
----------------------------------------------------------*/
-function SWEP:OnRemove()
-
-return true
+function SWEP:Think()
+self.Owner:GetViewModel():SetSkin(0)
+if self.Attack == 1 and self.AttackTimer <= CurTime() then
+local tr = util.TraceLine( {
+start = self.Owner:GetShootPos(),
+endpos = self.Owner:GetShootPos() + self.Owner:GetAimVector() * 64,
+filter = self.Owner,
+mask = MASK_SHOT_HULL,
+} )
+if !IsValid( tr.Entity ) then
+tr = util.TraceHull( {
+start = self.Owner:GetShootPos(),
+endpos = self.Owner:GetShootPos() + self.Owner:GetAimVector() * 64,
+filter = self.Owner,
+mins = Vector( -16, -16, 0 ),
+maxs = Vector( 16, 16, 0 ),
+mask = MASK_SHOT_HULL,
+} )
 end
-
-/*---------------------------------------------------------
-Holster
----------------------------------------------------------*/
-function SWEP:Holster()
-
-	return true
+if SERVER and IsValid( tr.Entity ) then
+local dmg = DamageInfo()
+local attacker = self.Owner
+if !IsValid( attacker ) then
+attacker = self
 end
-
-/*---------------------------------------------------------
-DrawWeaponSelection
----------------------------------------------------------*/
-function SWEP:DrawWeaponSelection(x, y, wide, tall, alpha)
-
-	draw.SimpleText(self.IconLetter, "CSSelectIcons", x + wide / 2, y + tall * 0.3, Color(255, 210, 0, 255), TEXT_ALIGN_CENTER)
-	-- Draw a CS:S select icon
-
-	self:PrintWeaponInfo(x + wide + 20, y + tall * 0.95, alpha)
-	-- Print weapon information
+dmg:SetAttacker( attacker )
+dmg:SetInflictor( self )
+dmg:SetDamage( self.Primary.Damage )
+dmg:SetDamageForce( self.Owner:GetForward() * self.Primary.Force )
+tr.Entity:TakeDamageInfo( dmg )
 end
-
-/*---------------------------------------------------------
-	DrawHUD
-	
-	Just a rough mock up showing how to draw your own crosshair.
-	
----------------------------------------------------------*/
-
-function SWEP:DrawHUD()
-
-
-	-- local x, y
-
-	-- // If we're drawing the local player, draw the crosshair where they're aiming,
-	-- // instead of in the center of the screen.
-	-- if ( self.Owner == LocalPlayer() && self.Owner:ShouldDrawLocalPlayer() ) then
-
-	-- 	local tr = util.GetPlayerTrace( self.Owner )
-	-- 	tr.mask = bit.bor( CONTENTS_SOLID,CONTENTS_MOVEABLE,CONTENTS_MONSTER,CONTENTS_WINDOW,CONTENTS_DEBRIS,CONTENTS_GRATE,CONTENTS_AUX )
-	-- 	local trace = util.TraceLine( tr )
-		
-	-- 	local coords = trace.HitPos:ToScreen()
-	-- 	x, y = coords.x, coords.y
-
-	-- else
-	-- 	x, y = ScrW() / 2.0, ScrH() / 2.0
-	-- end
-	
-	-- local scale = 1 
-	
-	-- // Scale the size of the crosshair according to how long ago we fired our weapon
-	-- local LastShootTime = self.Weapon:GetNetworkedFloat( "LastShootTime", 0 )
-	-- scale = scale * (2 - math.Clamp( (CurTime() - LastShootTime) * 5, 0.0, 1.0 ))
-
-	-- surface.SetDrawColor( 0, 255, 0, 255 )
-	
-	
-	-- // Draw an awesome crosshair
-	-- local gap = scale + 5
-	-- local length = gap + 8 * scale
-	-- surface.DrawLine( x - length, y, x - gap, y )
-	-- surface.DrawLine( x + length, y, x + gap, y )
-	-- surface.DrawLine( x, y - length, x, y - gap )
-	-- surface.DrawLine( x, y + length, x, y + gap )
+if tr.Hit then
+if SERVER then
+if tr.Entity:IsNPC() || tr.Entity:IsPlayer() then
+self.Owner:EmitSound( "weapons/knife/knife_hit1.wav" )
+end
+if !( tr.Entity:IsNPC() || tr.Entity:IsPlayer() ) then
+self.Owner:EmitSound( "weapons/knife/knife_hitwall1.wav" )
+end
+end
+end
+self.Attack = 0
+end
+if self.Idle == 0 and self.IdleTimer <= CurTime() then
+if SERVER then
 
 end
+self.Idle = 0
+end
+end
 
-function SWEP:DoImpactEffect( tr, nDamageType )
-	util.Decal("ManhackCut", tr.HitPos + tr.HitNormal, tr.HitPos - tr.HitNormal)	
-	return true;
-	
+function SWEP:DoImpactEffect( tr, dmgtype )
+    return true;
+end
+
+function SWEP:DrawWeaponSelection( x, y, wide, tall, alpha )
+
+	draw.SimpleText( self.IconLetterCSS, "CSSelectIcons", x + wide/2, y + tall*0.2, Color( 255, 210, 0, 255 ), TEXT_ALIGN_CENTER )
+
 end
