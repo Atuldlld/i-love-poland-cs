@@ -5,7 +5,7 @@ end
 if (CLIENT) then
 	SWEP.DrawCrosshair = true
 	SWEP.PrintName 			= "Krieg 550 Commando"
-	SWEP.Slot 				= 30
+	SWEP.Slot 				= 0
 	SWEP.SlotPos 			= 1
 	SWEP.IconLetterCSS		= "o"
 
