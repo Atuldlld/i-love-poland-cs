@@ -10,7 +10,6 @@ include( 'sv_buymenu.lua' )
 include( 'hidenames.lua' )
 include( 'cl_buymenu.lua' )
 
-
 -- Serverside only stuff goes here
 
 --Makes a pre round, also doesnt draw the game every time im testing it
@@ -58,7 +57,7 @@ function GM:RoundTimerEnd()
 	-- else
 	-- 	GAMEMODE:RoundEndWithResult( 1001, "Draw, everyone loses!" )
 	-- end
-	GAMEMODE:RoundEndWithResult( 1001, "Ничья!" )
+	GAMEMODE:RoundEndWithResult( 1001, "Draw, everyone loses!" )
 
 end
 

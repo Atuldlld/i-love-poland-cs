@@ -1,7 +1,7 @@
-"cs-mini"
+"cs-mini_eng"
 {
 	"base"				"fretta15"
-	"title"				"Counter-Strike Mini (rus)"
+	"title"				"Counter-Strike Mini (eng)"
 	"menusystem"		"1"
 	"maps"				""
 	

@@ -8,7 +8,7 @@ GM.Help		= ""
 
 GM.Data = {}
 
-DeriveGamemode( "fretta15" )
+DeriveGamemode( "fretta14" )
 
 
 IncludePlayerClasses()					-- Automatically includes files in "gamemode/player_class"
@@ -55,7 +55,7 @@ GM.SelectColor = false				-- Can players modify the colour of their name? (ie.. 
 GM.PlayerRingSize = 48              -- How big are the colored rings under the player's feet (if they are enabled) ?
 GM.HudSkin = "SimpleSkin"
 
-GM.SuicideString = "Самовыпилился"
+GM.SuicideString = "Suicide"
 
 GM.ValidSpectatorModes = { OBS_MODE_CHASE, OBS_MODE_IN_EYE }
 GM.ValidSpectatorEntities = { "player" }	-- Entities we can spectate
@@ -68,15 +68,15 @@ function GM:CreateTeams()
 
 	if ( !GAMEMODE.TeamBased ) then return end
 
-	team.SetUp( TEAM_CT, "Спецназ", Color( 0, 0, 210 ), true )
+	team.SetUp( TEAM_CT, "Counter-Terrorists", Color( 0, 0, 210 ), true )
 	team.SetSpawnPoint( TEAM_CT, { "info_player_counterterrorist" } )
 	team.SetClass( TEAM_CT, { "ct_urban", "ct_gsg9", "ct_sas", "ct_gign" } )
 
-	team.SetUp( TEAM_T, "Террористы", Color( 210, 0, 0 ), true )
+	team.SetUp( TEAM_T, "Terrorists", Color( 210, 0, 0 ), true )
 	team.SetSpawnPoint( TEAM_T, { "info_player_terrorist" } )
 	team.SetClass( TEAM_T, { "t_terror", "t_leet", "t_arctic", "t_guerilla" } )
 
-	team.SetUp( TEAM_SPECTATOR, "Наблюдатель", Color( 0, 210, 0), true )
+	team.SetUp( TEAM_SPECTATOR, "Spectator", Color( 0, 210, 0), true )
 	team.SetSpawnPoint( TEAM_SPECTATOR, { "info_player_start", "info_player_terrorist", "info_player_counterterrorist", "info_player_combine", "info_player_rebel" } )
 
 end

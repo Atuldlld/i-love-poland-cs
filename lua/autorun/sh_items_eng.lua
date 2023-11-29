@@ -1,8 +1,8 @@
 MsgC(Color(179, 57, 57), '[Buy System | Items]', Color(255, 255, 255), ' - Shared side loaded.', '\n')
 
-items_buymenu = {
+items_buymenu_eng = {
     Weapon_pack1 = {
-        name = 'Штурмовая Винтовка',
+        name = 'Assault rifle with scope',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then
@@ -28,7 +28,7 @@ items_buymenu = {
 		end
     },
     Weapon_pack2 = {
-        name = 'Снайперская Винтовка',
+        name = 'Sniper rifle',
         func_items = function(ply)
 			if SERVER then
 				ply:StripWeapons()
@@ -65,7 +65,7 @@ items_buymenu = {
 	-- 	end
     -- },
 	Weapon_pack5 = {
-        name = 'Винтовка',
+        name = 'Assault rifle',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then
@@ -93,7 +93,7 @@ items_buymenu = {
 		end
     },
 	Weapon_pack6 = {
-        name = 'Пистолет-пулемет',
+        name = 'Submachine gun',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then
@@ -125,7 +125,7 @@ items_buymenu = {
 	end
     },
 	Weapon_pack7 = {
-        name = 'Дробовик',
+        name = 'Shotgun',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then

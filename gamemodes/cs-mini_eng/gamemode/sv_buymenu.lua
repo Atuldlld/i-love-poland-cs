@@ -18,11 +18,11 @@ net.Receive('InitializeGiveWeapon', function(len, ply)
 
     local name = net.ReadString()
 
-    if not items_buymenu_rus[name] then
+    if not items_buymenu_eng[name] then
         return
     end
 
-    local data = items_buymenu_rus[name]
+    local data = items_buymenu_eng[name]
 	data.func_items(ply)
 
 end)
