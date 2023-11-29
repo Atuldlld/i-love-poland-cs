@@ -2,7 +2,7 @@ MsgC(Color(179, 57, 57), '[Buy System | Items]', Color(255, 255, 255), ' - Share
 
 items_buymenu_eng = {
     Weapon_pack1 = {
-        name = 'Scoper Assault Rifle',
+        name = 'Scoped Assault Rifle',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then
