@@ -2,7 +2,7 @@ MsgC(Color(179, 57, 57), '[Buy System | Items]', Color(255, 255, 255), ' - Share
 
 items_buymenu_eng = {
     Weapon_pack1 = {
-        name = 'Assault rifle with scope',
+        name = 'Scoper Assault Rifle',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then
@@ -28,7 +28,7 @@ items_buymenu_eng = {
 		end
     },
     Weapon_pack2 = {
-        name = 'Sniper rifle',
+        name = 'Sniper Rifle',
         func_items = function(ply)
 			if SERVER then
 				ply:StripWeapons()
@@ -65,7 +65,7 @@ items_buymenu_eng = {
 	-- 	end
     -- },
 	Weapon_pack5 = {
-        name = 'Assault rifle',
+        name = 'Assault Rifle',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then
@@ -93,7 +93,7 @@ items_buymenu_eng = {
 		end
     },
 	Weapon_pack6 = {
-        name = 'Submachine gun',
+        name = 'Submachine Gun',
         func_items = function(ply)
 			if SERVER then
 				if ply:Team() == TEAM_T then
