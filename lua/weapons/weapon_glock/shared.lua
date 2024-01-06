@@ -10,8 +10,6 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "Glock"
 	SWEP.Author				= ""
-	SWEP.Slot				= 1
-	SWEP.SlotPos			= 0
 	SWEP.IconLetterCSS		= "c"
 
 	killicon.AddFont( "weapon_glock", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -33,6 +31,9 @@ SWEP.ViewModelFOV		= 44
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 1
+SWEP.SlotPos			= 10
+
 
 SWEP.Primary.Sound			= Sound( "Weapon_Glock.Single" )
 SWEP.Primary.Recoil			= 3
@@ -41,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.015
 SWEP.Primary.ClipSize		= 20
 SWEP.Primary.Delay			= 0.09
-SWEP.Primary.DefaultClip	= 20
+SWEP.Primary.DefaultClip	= 140
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "pistol"
 

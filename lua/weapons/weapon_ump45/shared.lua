@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "KM UMP45"
 	SWEP.Author				= "oTvErTkA"
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 3
+
 	SWEP.IconLetterCSS		= "q"
 
 	killicon.AddFont( "weapon_ump45", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -30,7 +29,8 @@ SWEP.WorldModel			= "models/weapons/w_smg_ump45.mdl"
 SWEP.UseHands			= true
 SWEP.ViewModelFlip		= false
 SWEP.ViewModelFOV		= 60
-
+SWEP.Slot				= 2
+SWEP.SlotPos			= 22
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
@@ -42,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.025
 SWEP.Primary.ClipSize		= 25
 SWEP.Primary.Delay			= 0.1
-SWEP.Primary.DefaultClip	= 25
+SWEP.Primary.DefaultClip	= 125
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "smg1"
 

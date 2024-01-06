@@ -8,9 +8,13 @@ CLASS.PlayerModel		= {"models/player/urban.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_usp" )
-pl:GiveAmmo( 100 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )
@@ -31,9 +35,13 @@ CLASS.PlayerModel		= {"models/player/riot.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_usp" )
-pl:GiveAmmo( 100 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )
@@ -52,9 +60,13 @@ CLASS.PlayerModel		= {"models/player/gasmask.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_usp" )
-pl:GiveAmmo( 100 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )
@@ -73,9 +85,13 @@ CLASS.PlayerModel		= {"models/player/swat.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_usp" )
-pl:GiveAmmo( 100 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )

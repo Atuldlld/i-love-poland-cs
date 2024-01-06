@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "Five-Seven"
 	SWEP.Author				= ""
-	SWEP.Slot				= 1
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "u"
 
 	killicon.AddFont( "weapon_fiveseven", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -33,6 +32,8 @@ SWEP.ViewModelFlip		= false
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 1
+SWEP.SlotPos			= 7
 
 SWEP.Primary.Sound			= Sound( "Weapon_FiveSeven.Single" )
 SWEP.Primary.Recoil			= 2.5
@@ -41,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.01
 SWEP.Primary.ClipSize		= 20
 SWEP.Primary.Delay			= 0.09
-SWEP.Primary.DefaultClip	= 20
+SWEP.Primary.DefaultClip	= 120
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "pistol"
 

@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "MAC-10"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "l"
 
 	killicon.AddFont( "weapon_mac10", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -19,6 +18,7 @@ if ( CLIENT ) then
 end
 
 SWEP.HoldType			= "pistol"
+
 SWEP.Base				= "br_zoom_base"
 SWEP.Category			= "Counter-Strike Mini"
 
@@ -33,7 +33,8 @@ SWEP.ViewModelFOV		= 47
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
-
+SWEP.Slot				= 2
+SWEP.SlotPos			= 14
 SWEP.Primary.Sound			= Sound( "Weapon_mac10.Single" )
 SWEP.Primary.Recoil			= 5
 SWEP.Primary.Damage			= 25
@@ -41,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.05
 SWEP.Primary.ClipSize		= 30
 SWEP.Primary.Delay			= 0.07
-SWEP.Primary.DefaultClip	= 30
+SWEP.Primary.DefaultClip	= 130
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "smg1"
 

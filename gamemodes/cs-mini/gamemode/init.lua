@@ -1,12 +1,13 @@
 AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
-AddCSLuaFile( "sv_buymenu.lua" )
-AddCSLuaFile( "hidenames.lua" )
 AddCSLuaFile( "holster.lua" )
+AddCSLuaFile( "cl_shop.lua" )
+AddCSLuaFile( "deathsounds.lua" )
 
 include( 'shared.lua' )
-include( 'sv_buymenu.lua' )
-include( 'hidenames.lua' )
+include("cl_shop.lua")
+include("deathsounds.lua")
+
 
 
 -- Serverside only stuff goes here
@@ -37,12 +38,19 @@ end
 
 function GM:OnRoundResult( t )
 
+	if t == 1 then
+		BroadcastLua([[sound.Play("radio/ctwin.wav",LocalPlayer():GetPos())]]) -- COUNTER TERRORISTS WIN
+	elseif t == 2 then
+		BroadcastLua([[sound.Play("radio/terwin.wav",LocalPlayer():GetPos())]]) -- TERRORISTS WIN
+	else
+		BroadcastLua([[sound.Play("radio/rounddraw.wav",LocalPlayer():GetPos())]]) --ROUND DRAW
+	end
+
 	team.AddScore( t, 1 )
 
 	-- if team.GetScore( t ) >= 3 then
 	-- 	timer.Simple( 5, function() GAMEMODE:EndOfGame( false ) end )
 	-- end
-
 end
 
 function GM:RoundTimerEnd()
@@ -79,13 +87,4 @@ function StripWorld()
     end
 end
 
-hook.Add( "GetFallDamage", "NoRunnerDamage", function( ply, speed )
-    if ply.Runner then
-        return 0
-    end
-end )
-
-hook.Add( "PlayerDeath", "NoRunnerDamage", function( victim, inflictor, attacker )
- victim.Runner = false
-end )
-
+--------------------------------------------------------------------------------------------------------------

@@ -6,8 +6,7 @@ if (CLIENT) then
 	SWEP.DrawCrosshair = true
 	SWEP.PrintName 		= "D3/AU-1"
 	SWEP.ViewModelFOV		= 65
-	SWEP.Slot 			= 0
-	SWEP.SlotPos 		= 1
+
 	SWEP.IconLetterCSS		= "i"
 
 	killicon.AddFont("weapon_g3sg1", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -25,6 +24,10 @@ SWEP.AdminSpawnable 		= true
 SWEP.ViewModel 			= "models/weapons/cstrike/c_snip_g3sg1.mdl"
 SWEP.WorldModel 			= "models/weapons/w_snip_g3sg1.mdl"
 SWEP.UseHands			= true
+SWEP.Slot 			= 2
+
+
+SWEP.SlotPos 		= 8
 
 SWEP.Primary.Sound 		= Sound("Weapon_G3SG1.Single")
 SWEP.Primary.Damage 		= 45
@@ -33,7 +36,7 @@ SWEP.Primary.NumShots 		= 1
 SWEP.Primary.Cone 		= 0.001
 SWEP.Primary.ClipSize 		= 20
 SWEP.Primary.Delay 		= 0.2
-SWEP.Primary.DefaultClip 	= 20
+SWEP.Primary.DefaultClip 	= 120
 SWEP.Primary.Automatic 		= true
 SWEP.Primary.Ammo 		= "ar2"
 

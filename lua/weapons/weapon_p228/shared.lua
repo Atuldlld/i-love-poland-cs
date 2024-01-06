@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "p228"
 	SWEP.Author				= ""
-	SWEP.Slot				= 1
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "y"
 
 	killicon.AddFont( "weapon_p228", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -30,6 +29,9 @@ SWEP.WorldModel			= "models/weapons/w_pist_p228.mdl"
 SWEP.UseHands			= true
 SWEP.ViewModelFlip		= false
 SWEP.ViewModelFOV		= 47
+SWEP.Slot				= 1
+SWEP.SlotPos			= 17
+
 
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
@@ -41,7 +43,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.01
 SWEP.Primary.ClipSize		= 13
 SWEP.Primary.Delay			= 0.08
-SWEP.Primary.DefaultClip	= 13
+SWEP.Primary.DefaultClip	= 65
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "pistol"
 
