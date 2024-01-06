@@ -6,8 +6,7 @@ if (CLIENT) then
 	SWEP.DrawCrosshair = true
 	SWEP.PrintName 		= "Magnum Sniper Rifle"
 	SWEP.ViewModelFOV		= 75
-	SWEP.Slot 			= 0
-	SWEP.SlotPos 		= 1
+
 	SWEP.IconLetterCSS 		= "r"
 
 	killicon.AddFont("weapon_awp", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ))
@@ -30,15 +29,17 @@ SWEP.WorldModel 			= "models/weapons/w_snip_awp.mdl"
 SWEP.UseHands			= true
 SWEP.ViewModelFOV		= 65
 SWEP.Primary.Sound 		= Sound("Weapon_awp.Single")
-SWEP.Primary.Damage 		= 100
+SWEP.Primary.Damage 		= 150
 SWEP.Primary.Recoil 		= 6
 SWEP.Primary.NumShots 		= 1
 SWEP.Primary.Cone 		= 0.0001
 SWEP.Primary.ClipSize 		= 10
 SWEP.Primary.Delay 		= 1.2
-SWEP.Primary.DefaultClip 	= 10
+SWEP.Primary.DefaultClip 	= 40
 SWEP.Primary.Automatic 		= false
 SWEP.Primary.Ammo 		= "ar2"
+SWEP.Slot 			= 2
+SWEP.SlotPos 		= 3
 
 SWEP.Secondary.Automatic	= true
 

@@ -10,8 +10,6 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "USP"
 	SWEP.Author				= ""
-	SWEP.Slot				= 1
-	SWEP.SlotPos			= 0
 	SWEP.IconLetterCSS		= "a"
 
 	killicon.AddFont( "weapon_usp", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -33,6 +31,8 @@ SWEP.ViewModelFOV		= 47
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 1
+SWEP.SlotPos			= 0
 
 SWEP.Primary.Sound			= Sound( "Weapon_usp.Single" )
 SWEP.SilencedSound			= Sound( "Weapon_usp.SilencedShot" )
@@ -42,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.01
 SWEP.Primary.ClipSize		= 12
 SWEP.Primary.Delay			= 0.08
-SWEP.Primary.DefaultClip	= 12
+SWEP.Primary.DefaultClip	= 112
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "pistol"
 

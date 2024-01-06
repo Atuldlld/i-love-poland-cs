@@ -8,8 +8,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "Famas"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "t"
 
 	killicon.AddFont( "weapon_famas", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -31,6 +30,8 @@ SWEP.ViewModelFOV		= 57
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 2
+SWEP.SlotPos			= 6
 
 SWEP.Primary.Sound			= Sound( "Weapon_famas.Single" )
 SWEP.Primary.Recoil			= 4
@@ -39,7 +40,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.015
 SWEP.Primary.ClipSize		= 25
 SWEP.Primary.Delay			= 0.1
-SWEP.Primary.DefaultClip	= 25
+SWEP.Primary.DefaultClip	= 115
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "ar2"
 

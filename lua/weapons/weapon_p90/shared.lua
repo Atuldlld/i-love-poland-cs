@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "ES C90"
 	SWEP.Author				= "oTvErTkA"
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 3
+
 	SWEP.IconLetterCSS		= "m"
 
 	killicon.AddFont( "weapon_p90", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -33,6 +32,8 @@ SWEP.ViewModelFlip		= false
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 2
+SWEP.SlotPos			= 16
 
 SWEP.Primary.Sound			= Sound( "Weapon_p90.Single" )
 SWEP.Primary.Recoil			= 2
@@ -41,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.03
 SWEP.Primary.ClipSize		= 50
 SWEP.Primary.Delay			= 0.07
-SWEP.Primary.DefaultClip	= 50
+SWEP.Primary.DefaultClip	= 150
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "smg1"
 
