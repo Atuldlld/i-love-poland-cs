@@ -5,7 +5,16 @@ end
 if (CLIENT) then
 	SWEP.DrawCrosshair = true
 	SWEP.PrintName 			= "Krieg 550 Commando"
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+	SWEP.Slot 				= 0
+	SWEP.SlotPos 			= 1
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 	SWEP.IconLetterCSS		= "o"
 
 	killicon.AddFont("weapon_sg550", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ))

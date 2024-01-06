@@ -25,10 +25,21 @@ weaponsinfos["weapon_physgun"].DrawFunction=function(ent)
     render.SetMaterial(physgunmat1)
     render.DrawSprite(StartPos,20,20,Color(255,255,255,255));
 end
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 
 
 ------------------
 --rifle
+<<<<<<< HEAD
+=======
+=======
+------------------
+--primary
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 ------------------
 weaponsinfos["weapon_ak47"]={}
 weaponsinfos["weapon_ak47"].Model="models/weapons/w_rif_ak47.mdl"
@@ -40,6 +51,22 @@ weaponsinfos["weapon_m4a1"].Model="models/weapons/w_rif_m4a1.mdl"
 weaponsinfos["weapon_m4a1"].Bone="ValveBiped.Bip01_R_Clavicle"
 weaponsinfos["weapon_m4a1"].BoneOffset={Vector(13,4,6),Angle(90,0,100)}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+weaponsinfos["weapon_mp5navy"]={}
+weaponsinfos["weapon_mp5navy"].Model="models/weapons/w_smg_mp5.mdl"
+weaponsinfos["weapon_mp5navy"].Bone="ValveBiped.Bip01_R_Clavicle"
+weaponsinfos["weapon_mp5navy"].BoneOffset={Vector(14,8,6),Angle(90,0,100)}
+
+weaponsinfos["weapon_ump45"]={}
+weaponsinfos["weapon_ump45"].Model="models/weapons/w_smg_ump45.mdl"
+weaponsinfos["weapon_ump45"].Bone="ValveBiped.Bip01_R_Clavicle"
+weaponsinfos["weapon_ump45"].BoneOffset={Vector(14,8,6),Angle(90,0,100)}
+
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 weaponsinfos["weapon_awp"]={}
 weaponsinfos["weapon_awp"].Model="models/weapons/w_snip_awp.mdl"
 weaponsinfos["weapon_awp"].Bone="ValveBiped.Bip01_R_Clavicle"
@@ -55,6 +82,10 @@ weaponsinfos["weapon_aug"].Model="models/weapons/w_rif_aug.mdl"
 weaponsinfos["weapon_aug"].Bone="ValveBiped.Bip01_R_Clavicle"
 weaponsinfos["weapon_aug"].BoneOffset={Vector(14,8,5),Angle(90,0,100)}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 weaponsinfos["weapon_famas"]={}
 weaponsinfos["weapon_famas"].Model="models/weapons/w_rif_famas.mdl"
 weaponsinfos["weapon_famas"].Bone="ValveBiped.Bip01_R_Clavicle"
@@ -118,6 +149,11 @@ weaponsinfos["weapon_m249"].Model="models/weapons/w_mach_m249para.mdl"
 weaponsinfos["weapon_m249"].Bone="ValveBiped.Bip01_R_Clavicle"
 weaponsinfos["weapon_m249"].BoneOffset={Vector(13,4,6),Angle(90,0,100)}
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 weaponsinfos["weapon_m3"]={}
 weaponsinfos["weapon_m3"].Model="models/weapons/w_shot_m3super90.mdl"
 weaponsinfos["weapon_m3"].Bone="ValveBiped.Bip01_R_Clavicle"
@@ -128,7 +164,15 @@ weaponsinfos["weapon_xm1014"].Model="models/weapons/w_shot_xm1014.mdl"
 weaponsinfos["weapon_xm1014"].Bone="ValveBiped.Bip01_R_Clavicle"
 weaponsinfos["weapon_xm1014"].BoneOffset={Vector(13,4,6),Angle(90,0,100)}
 ------------------
+<<<<<<< HEAD
 --Pistol
+=======
+<<<<<<< HEAD
+--Pistol
+=======
+--secondary
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 ------------------
 weaponsinfos["weapon_glock"]={}
 weaponsinfos["weapon_glock"].Model="models/weapons/w_pist_glock18.mdl"
@@ -162,12 +206,21 @@ weaponsinfos["weapon_hegrenade"].Model="models/weapons/w_eq_fraggrenade.mdl"
 weaponsinfos["weapon_hegrenade"].Bone="ValveBiped.Bip01_Pelvis"
 weaponsinfos["weapon_hegrenade"].BoneOffset={Vector(3,-5,6),Angle(-95,0,0)}
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 weaponsinfos["weapon_smokegrenade"]={}
 weaponsinfos["weapon_smokegrenade"].Model="models/weapons/w_eq_smokegrenade.mdl"
 weaponsinfos["weapon_smokegrenade"].Bone="ValveBiped.Bip01_Pelvis"
 weaponsinfos["weapon_smokegrenade"].BoneOffset={Vector(3,-5,6),Angle(-95,0,0)}
 weaponsinfos["weapon_smokegrenade"].Priority="weapon_hegrenade"
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 -- weaponsinfos["weapon_knife"]={}
 -- weaponsinfos["weapon_knife"].Model="models/weapons/w_knife_t.mdl"
 -- weaponsinfos["weapon_knife"].Bone="ValveBiped.Bip01_Pelvis"

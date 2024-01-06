@@ -1,6 +1,7 @@
 AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
 AddCSLuaFile( "holster.lua" )
+<<<<<<< HEAD
 AddCSLuaFile( "cl_shop.lua" )
 AddCSLuaFile( "deathsounds.lua" )
 
@@ -8,6 +9,24 @@ include( 'shared.lua' )
 include("cl_shop.lua")
 include("deathsounds.lua")
 
+=======
+<<<<<<< HEAD
+AddCSLuaFile( "cl_shop.lua" )
+AddCSLuaFile( "deathsounds.lua" )
+
+include( 'shared.lua' )
+include("cl_shop.lua")
+include("deathsounds.lua")
+
+=======
+AddCSLuaFile( "cl_buymenu.lua" )
+
+include( 'shared.lua' )
+include( 'sv_buymenu.lua' )
+include( 'hidenames.lua' )
+include( 'cl_buymenu.lua' )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 
 
 -- Serverside only stuff goes here

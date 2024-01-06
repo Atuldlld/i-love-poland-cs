@@ -8,6 +8,10 @@ CLASS.PlayerModel		= {"models/player/phoenix.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 pl:Give( "weapon_glock" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -15,6 +19,14 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+<<<<<<< HEAD
+=======
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 end
 
 function CLASS:OnSpawn( pl )
@@ -35,6 +47,10 @@ CLASS.PlayerModel		= {"models/player/leet.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 pl:Give( "weapon_glock" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -42,6 +58,14 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+<<<<<<< HEAD
+=======
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 end
 
 function CLASS:OnSpawn( pl )
@@ -55,11 +79,22 @@ player_class.Register( "t_leet", CLASS )
 
 local CLASS = {}
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 CLASS.Base 				= "player"
 CLASS.DisplayName		= "Arctic Avengers" --"Arctic Avengers"
 CLASS.Description       = "Swedish terrorist faction founded in 1977. Famous for \ntheir bombing of the Canadian embassy in 1990."
 CLASS.PlayerModel		= {"models/player/arctic.mdl"}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 function CLASS:Loadout( pl )
 
 pl:Give( "weapon_glock" )
@@ -69,6 +104,17 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+<<<<<<< HEAD
+=======
+=======
+
+function CLASS:Loadout( pl )
+
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 end
 
 function CLASS:OnSpawn( pl )
@@ -87,6 +133,10 @@ CLASS.PlayerModel		= {"models/player/guerilla.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 pl:Give( "weapon_glock" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -94,6 +144,14 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+<<<<<<< HEAD
+=======
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 end
 
 function CLASS:OnSpawn( pl )

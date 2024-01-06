@@ -1,5 +1,9 @@
 AddCSLuaFile( "cl_init.lua" )
 AddCSLuaFile( "shared.lua" )
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 AddCSLuaFile( "holster.lua" )
 AddCSLuaFile( "cl_shop.lua" )
 AddCSLuaFile( "deathsounds.lua" )
@@ -9,6 +13,20 @@ include("cl_shop.lua")
 include("deathsounds.lua")
 
 
+<<<<<<< HEAD
+=======
+=======
+AddCSLuaFile( "sv_buymenu.lua" )
+AddCSLuaFile( "hidenames.lua" )
+AddCSLuaFile( "holster.lua" )
+AddCSLuaFile( "cl_buymenu.lua" )
+
+include( 'shared.lua' )
+include( 'sv_buymenu.lua' )
+include( 'hidenames.lua' )
+include( 'cl_buymenu.lua' )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 
 -- Serverside only stuff goes here
 
@@ -38,6 +56,10 @@ end
 
 function GM:OnRoundResult( t )
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 	if t == 1 then
 		BroadcastLua([[sound.Play("radio/ctwin.wav",LocalPlayer():GetPos())]]) -- COUNTER TERRORISTS WIN
 	elseif t == 2 then
@@ -46,6 +68,11 @@ function GM:OnRoundResult( t )
 		BroadcastLua([[sound.Play("radio/rounddraw.wav",LocalPlayer():GetPos())]]) --ROUND DRAW
 	end
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
 	team.AddScore( t, 1 )
 
 	-- if team.GetScore( t ) >= 3 then
@@ -88,4 +115,21 @@ function StripWorld()
     end
 end
 
+<<<<<<< HEAD
 --------------------------------------------------------------------------------------------------------------
+=======
+<<<<<<< HEAD
+--------------------------------------------------------------------------------------------------------------
+=======
+hook.Add( "GetFallDamage", "NoRunnerDamage", function( ply, speed )
+    if ply.Runner then
+        return 0
+    end
+end )
+
+hook.Add( "PlayerDeath", "NoRunnerDamage", function( victim, inflictor, attacker )
+ victim.Runner = false
+end )
+
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
+>>>>>>> 3c457eae2159f7c5271b231c00c69ed5a06c083d
