@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "Schmidt Machine Pistol"
 	SWEP.Author				= "oTvErTkA"
-	SWEP.Slot				= 20
-	SWEP.SlotPos			= 3
+
 	SWEP.IconLetterCSS		= "d"
 
 	killicon.AddFont( "weapon_tmp", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -30,6 +29,8 @@ SWEP.WorldModel			= "models/weapons/w_smg_tmp.mdl"
 SWEP.ViewModelFOV		= 60
 SWEP.UseHands			= true
 SWEP.ViewModelFlip		= false
+SWEP.Slot				= 2
+SWEP.SlotPos			= 21
 
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
@@ -42,7 +43,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.04
 SWEP.Primary.ClipSize		= 30
 SWEP.Primary.Delay			= 0.075
-SWEP.Primary.DefaultClip	= 30
+SWEP.Primary.DefaultClip	= 150
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "smg1"
 

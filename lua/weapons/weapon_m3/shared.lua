@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "Pump Shotgun"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "k"
 
 	killicon.AddFont( "weapon_m3", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -30,8 +29,9 @@ SWEP.WorldModel			= "models/weapons/w_shot_m3super90.mdl"
 SWEP.ViewModelFlip	    = false
 SWEP.ViewModelFOV       = 46
 SWEP.UseHands		 	= true
-
-SWEP.Weight				= 10
+SWEP.Slot				= 2
+SWEP.SlotPos			= 0
+SWEP.Weight				= 11
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
 SWEP.Primary.Sound			= Sound( "Weapon_m3.Single" )
@@ -41,7 +41,7 @@ SWEP.Primary.NumShots		= 7
 SWEP.Primary.Cone			= 0.1
 SWEP.Primary.ClipSize		= 8
 SWEP.Primary.Delay			= 0.9
-SWEP.Primary.DefaultClip	= 8
+SWEP.Primary.DefaultClip	= 40
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "buckshot"
 

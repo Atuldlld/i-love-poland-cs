@@ -8,8 +8,6 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "AK-47"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
 	SWEP.IconLetterCSS		= "b"
 
 	killicon.AddFont( "weapon_ak47", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -32,6 +30,8 @@ SWEP.WorldModel			= "models/weapons/w_rif_ak47.mdl"
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= true
 SWEP.AutoSwitchFrom		= true
+SWEP.Slot				= 2
+SWEP.SlotPos			= 1
 
 SWEP.Primary.Sound			= Sound( "weapon_ak47.single" )
 SWEP.Primary.Recoil			= 6
@@ -40,7 +40,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.03
 SWEP.Primary.ClipSize		= 30
 SWEP.Primary.Delay			= 0.12
-SWEP.Primary.DefaultClip	= 30
+SWEP.Primary.DefaultClip	= 120
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "ar2"
 

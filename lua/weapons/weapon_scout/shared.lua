@@ -5,8 +5,7 @@ end
 if (CLIENT) then
 	SWEP.DrawCrosshair = true
 	SWEP.PrintName 		= "Schmidt Scout"
-	SWEP.Slot 			= 30
-	SWEP.SlotPos 		= 1
+
 	SWEP.IconLetterCSS	= "n"
 
 	killicon.AddFont("weapon_scout", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ))
@@ -26,7 +25,8 @@ SWEP.WorldModel 			= "models/weapons/w_snip_scout.mdl"
 SWEP.ViewModelFOV			= 60
 SWEP.UseHands				= true
 SWEP.ViewModelFlip			= false
-
+SWEP.Slot 			= 2
+SWEP.SlotPos 		= 18
 SWEP.Primary.Sound 		= Sound("Weapon_SCOUT.Single")
 SWEP.Primary.Damage 		= 70
 SWEP.Primary.Recoil 		= 5
@@ -34,7 +34,7 @@ SWEP.Primary.NumShots 		= 1
 SWEP.Primary.Cone 		= 0.0001
 SWEP.Primary.ClipSize 		= 10
 SWEP.Primary.Delay 		= 1.2
-SWEP.Primary.DefaultClip 	= 10
+SWEP.Primary.DefaultClip 	= 110
 SWEP.Primary.Automatic 		= false
 SWEP.Primary.Ammo 		= "ar2"
 

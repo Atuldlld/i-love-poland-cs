@@ -5,8 +5,7 @@ end
 if (CLIENT) then
 	SWEP.DrawCrosshair = true
 	SWEP.PrintName 			= "Krieg 550 Commando"
-	SWEP.Slot 				= 30
-	SWEP.SlotPos 			= 1
+
 	SWEP.IconLetterCSS		= "o"
 
 	killicon.AddFont("weapon_sg550", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ))
@@ -27,6 +26,8 @@ SWEP.WorldModel 			= "models/weapons/w_snip_sg550.mdl"
 SWEP.ViewModelFlip		= false
 SWEP.UseHands			= true
 SWEP.ViewModelFOV		= 62
+SWEP.Slot 				= 2
+SWEP.SlotPos 			= 19
 
 SWEP.Primary.Sound 		= Sound("Weapon_SG550.Single")
 SWEP.Primary.Damage 		= 45
@@ -35,7 +36,7 @@ SWEP.Primary.NumShots 		= 1
 SWEP.Primary.Cone 			= 0.001
 SWEP.Primary.ClipSize 		= 30
 SWEP.Primary.Delay 			= 0.2
-SWEP.Primary.DefaultClip 	= 30
+SWEP.Primary.DefaultClip 	= 120
 SWEP.Primary.Automatic 		= true
 SWEP.Primary.Ammo 			= "ar2"
 
