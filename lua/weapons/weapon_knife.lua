@@ -46,7 +46,11 @@ SWEP.Primary.ClipSize = 0
 SWEP.Primary.DefaultClip = 0
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "none"
+<<<<<<< HEAD
 SWEP.Primary.Damage = 15
+=======
+SWEP.Primary.Damage = 40
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 SWEP.Primary.Delay = 0.4
 SWEP.Primary.Force = 1000
 
@@ -113,7 +117,83 @@ self.Idle = 0
 self.IdleTimer = CurTime() + self.Owner:GetViewModel():SequenceDuration()
 end
 
+function SWEP:EntityFaceBack(ent)
+	local angle = self.Owner:GetAngles().y -ent:GetAngles().y
+	if angle < -180 then angle = 360 +angle end
+	if angle <= 90 and angle >= -90 then return true end
+	return false
+end
+
 function SWEP:SecondaryAttack()
+<<<<<<< HEAD
+=======
+
+	local tr = {}
+	tr.start = self.Owner:GetShootPos()
+	tr.endpos = self.Owner:GetShootPos() + ( self.Owner:GetAimVector() * 60 )
+	tr.filter = self.Owner
+	tr.mask = MASK_SHOT
+	local trace = util.TraceLine( tr )
+
+	self.Weapon:SetNextPrimaryFire(CurTime() + 0.4)
+	self.Weapon:SetNextSecondaryFire(CurTime() + 1)
+	self.Owner:SetAnimation( PLAYER_ATTACK1 )
+
+	if ( trace.Hit ) then
+
+	local damage
+
+	if self:EntityFaceBack(trace.Entity) then
+
+		damage = 195
+	else
+		damage = 95
+
+	end
+
+		if trace.Entity:IsPlayer() or trace.Entity:IsNPC() then
+			self.Weapon:SendWeaponAnim(ACT_VM_SECONDARYATTACK)
+			self.Idle = CurTime() + self.Owner:GetViewModel():SequenceDuration()
+			bullet = {}
+			bullet.Num    = 1
+			bullet.Src    = self.Owner:GetShootPos()
+			bullet.Dir    = self.Owner:GetAimVector()
+			bullet.Spread = Vector(0, 0, 0)
+			bullet.Tracer = 0
+			bullet.Force  = 1
+			bullet.Damage = damage
+			self.Owner:FireBullets(bullet)
+			self.Weapon:EmitSound( "Weapon_Knife.Stab" )
+		else
+			bullet = {}
+			bullet.Num    = 1
+			bullet.Src    = self.Owner:GetShootPos()
+			bullet.Dir    = self.Owner:GetAimVector()
+			bullet.Spread = Vector(0, 0, 0)
+			bullet.Tracer = 0
+			bullet.Force  = 1
+			bullet.Damage = 65
+			self.Owner:FireBullets(bullet)
+
+			self.Weapon:SendWeaponAnim(ACT_VM_SECONDARYATTACK)
+			self.Idle = CurTime() + self.Owner:GetViewModel():SequenceDuration()
+			self.Weapon:EmitSound("Weapon_Knife.HitWall")
+
+		end
+	else
+		self.Weapon:EmitSound("Weapon_Knife.Slash")
+		self.Weapon:SendWeaponAnim(ACT_VM_SECONDARYATTACK)
+		self.Idle = CurTime() + self.Owner:GetViewModel():SequenceDuration()
+	end
+end
+
+function SWEP:Reload()
+end
+
+function SWEP:Think()
+self.Owner:GetViewModel():SetSkin(0)
+if self.Attack == 1 and self.AttackTimer <= CurTime() then
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 local tr = util.TraceLine( {
 start = self.Owner:GetShootPos(),
 endpos = self.Owner:GetShootPos() + self.Owner:GetAimVector() * 64,

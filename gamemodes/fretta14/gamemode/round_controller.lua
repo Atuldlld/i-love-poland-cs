@@ -33,7 +33,11 @@ function GM:OnPreRoundStart( num )
 
 	game.CleanUpMap()
 	
+<<<<<<< HEAD
 	-- UTIL_StripAllPlayers()  -- убрать пушку
+=======
+	UTIL_StripAllPlayers()
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 	UTIL_SpawnAllPlayers()
 	UTIL_FreezeAllPlayers()
 

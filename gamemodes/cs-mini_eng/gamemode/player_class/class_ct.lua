@@ -8,6 +8,7 @@ CLASS.PlayerModel		= {"models/player/urban.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
 pl:Give( "weapon_usp" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -15,6 +16,11 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_usp" )
+pl:GiveAmmo( 100 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )
@@ -32,6 +38,7 @@ CLASS.Base 				= "player"
 CLASS.DisplayName		= "GSG-9" --"GSG-9 "
 CLASS.Description       = "GSG-9 was born out of the tragic events that led to the \ndeath of several Israeli athletes during the \n1972 Olympic games in Munich, Germany."
 CLASS.PlayerModel		= {"models/player/riot.mdl"}
+<<<<<<< HEAD
 function CLASS:Loadout( pl )
 
 pl:Give( "weapon_usp" )
@@ -41,6 +48,14 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+
+function CLASS:Loadout( pl )
+
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_usp" )
+pl:GiveAmmo( 100 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )
@@ -59,6 +74,7 @@ CLASS.PlayerModel		= {"models/player/gasmask.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
 pl:Give( "weapon_usp" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -66,6 +82,11 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_usp" )
+pl:GiveAmmo( 100 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )
@@ -84,6 +105,7 @@ CLASS.PlayerModel		= {"models/player/swat.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
 pl:Give( "weapon_usp" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -91,6 +113,11 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_usp" )
+pl:GiveAmmo( 100 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )

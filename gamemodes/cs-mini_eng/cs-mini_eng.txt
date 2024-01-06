@@ -1,6 +1,10 @@
 "cs-mini_eng"
 {
+<<<<<<< HEAD
 	"base"				"fretta14"
+=======
+	"base"				"fretta15"
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 	"title"				"Counter-Strike Mini (eng)"
 	"menusystem"		"1"
 	"maps"				""

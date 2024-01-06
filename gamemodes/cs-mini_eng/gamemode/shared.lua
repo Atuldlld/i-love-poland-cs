@@ -4,11 +4,15 @@ GM.Email 	= ""
 GM.Website 	= "https://steamcommunity.com/groups/thealium"
 GM.Help		= ""
 
+<<<<<<< HEAD
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("cl_shop.lua")
 if SERVER then
     include("sv_shop.lua")
 end
+=======
+
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 
 GM.Data = {}
 
@@ -45,7 +49,11 @@ GM.AddFragsToTeamScore = false		-- Adds player's individual kills to team score 
 
 GM.NoAutomaticSpawning = false		-- Players don't spawn automatically when they die, some other system spawns them
 GM.RoundBased = true				-- Round based, like CS
+<<<<<<< HEAD
 GM.RoundLength = 301				-- Round length, in seconds
+=======
+GM.RoundLength = 300				-- Round length, in seconds
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 GM.RoundPreStartTime = 3			-- Preperation time before a round starts
 GM.RoundPostLength = 5				-- Seconds to show the 'x team won!' screen at the end of a round
 GM.RoundEndsWhenOneTeamAlive = true	-- CS Style rules
@@ -59,7 +67,11 @@ GM.SelectColor = false				-- Can players modify the colour of their name? (ie.. 
 GM.PlayerRingSize = 48              -- How big are the colored rings under the player's feet (if they are enabled) ?
 GM.HudSkin = "SimpleSkin"
 
+<<<<<<< HEAD
 GM.SuicideString = "Самовыпилился"
+=======
+GM.SuicideString = "Suicide"
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 
 GM.ValidSpectatorModes = { OBS_MODE_CHASE, OBS_MODE_IN_EYE }
 GM.ValidSpectatorEntities = { "player" }	-- Entities we can spectate
@@ -92,6 +104,7 @@ function GM:PlayerFootstep(ply, pos, foot, sound, volume, filter )
 	end
 end
 
+<<<<<<< HEAD
 hook.Add("PlayerCanPickupWeapon", "RestrictWeaponPickup", function(ply, weapon)
     local pickupSlot = weapon:GetSlot()
     if pickupSlot == 0 or pickupSlot == 1 or pickupSlot == 2  then
@@ -397,4 +410,6 @@ Shop.Items5 = {
 		description = "Grenade used to confuse the enemy.",
 	},
 }
+=======
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 

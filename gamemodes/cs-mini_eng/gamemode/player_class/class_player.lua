@@ -13,7 +13,10 @@ CLASS.JumpPower				= 200
 CLASS.MaxHealth				= 100
 CLASS.StartHealth			= 100
 CLASS.StartArmor			= 0
+<<<<<<< HEAD
 CLASS.DropWeaponOnDie		= true
+=======
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 
 function CLASS:Loadout( pl )
 

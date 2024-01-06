@@ -8,6 +8,7 @@ CLASS.PlayerModel		= {"models/player/phoenix.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
 pl:Give( "weapon_glock" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -15,6 +16,11 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )
@@ -35,6 +41,7 @@ CLASS.PlayerModel		= {"models/player/leet.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
 pl:Give( "weapon_glock" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -42,6 +49,11 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )
@@ -55,11 +67,15 @@ player_class.Register( "t_leet", CLASS )
 
 local CLASS = {}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 CLASS.Base 				= "player"
 CLASS.DisplayName		= "Arctic Avengers" --"Arctic Avengers"
 CLASS.Description       = "Swedish terrorist faction founded in 1977. Famous for \ntheir bombing of the Canadian embassy in 1990."
 CLASS.PlayerModel		= {"models/player/arctic.mdl"}
+<<<<<<< HEAD
 function CLASS:Loadout( pl )
 
 pl:Give( "weapon_glock" )
@@ -69,6 +85,14 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+
+function CLASS:Loadout( pl )
+
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )
@@ -87,6 +111,7 @@ CLASS.PlayerModel		= {"models/player/guerilla.mdl"}
 
 function CLASS:Loadout( pl )
 
+<<<<<<< HEAD
 pl:Give( "weapon_glock" )
 pl:Give( "weapon_knife" )
 pl:GiveAmmo( 60, "smg1", true )
@@ -94,6 +119,11 @@ pl:GiveAmmo( 60, "ar2", true )
 pl:GiveAmmo( 7, "357", true )
 pl:GiveAmmo( 10, "Buckshot", true )
 
+=======
+pl:Give( "weapon_knife" )
+pl:Give( "weapon_glock" )
+pl:GiveAmmo( 120 , "Pistol", true )
+>>>>>>> 4dc87c9a9a8c616cfb4ce3af35ef0301978d6c65
 end
 
 function CLASS:OnSpawn( pl )
