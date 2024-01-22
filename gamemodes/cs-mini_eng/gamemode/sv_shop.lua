@@ -251,12 +251,3 @@ hook.Add("PlayerButtonDown", "OpenMenuOnGPress", function(ply, button)
         ply:DropWeapon(plyWeapon)
     end
 end)
-
-local ENT = FindMetaTable( "Entity" )
-
-function ENT:SetMoney(ply)
-	playerMoney[ply] = math.max(playerMoney[ply] - 500,0)
-	net.Start("Update money HUD")
-	net.WriteFloat(playerMoney[ply])
-	net.Send(ply)
-end

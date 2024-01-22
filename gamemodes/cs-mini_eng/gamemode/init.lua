@@ -33,16 +33,6 @@ function GM:OnRoundStart( num )
 
 	UTIL_UnFreezeAllPlayers()
 
-	GAMEMODE.hostagesInRound = #ents.FindByClass("cs_hostage")
-	GAMEMODE.TotalhostagesInRound = GAMEMODE.hostagesInRound
-	GAMEMODE.DeadhostagesInRound = 0
-	GAMEMODE.hostagesInRoundM = GAMEMODE.hostagesInRound
-	if GAMEMODE.hostagesInRound > 0 then
-		IsCSRound = true
-	else
-		IsCSRound = false
-	end
-
 end
 
 
@@ -80,11 +70,7 @@ function GM:RoundTimerEnd()
 end
 
 function GM:CheckRoundEnd()
-	if IsCSRound then
-		if !(GAMEMODE.DeadhostagesInRound == GAMEMODE.TotalhostagesInRound) and GAMEMODE.hostagesInRound <= 0 then
-			GAMEMODE:RoundEndWithResult(TEAM_CT)
-		end
-	end
+
 end
 
 function GM:OnRoundWinner( )
@@ -103,20 +89,3 @@ function StripWorld()
 end
 
 --------------------------------------------------------------------------------------------------------------
-hook.Add("InitPostEntity", "csHostages_InitMap", function()
-	timer.Simple(3, function()
-		if not navmesh.IsLoaded() and GetConVar("cs_hostage_enabled"):GetBool() then
-			if #ents.FindByClass("hostage_entity") > 0 then
-				local entities = ents.FindByClass("hostage_entity")
-				entities = table.Add(entities, ents.FindByClass("info_player*"))
-				for k,v in pairs(entities) do
-					navmesh.AddWalkableSeed(v:GetPos(), v:GetUp())
-				end
-
-				print("Navmesh is not generated for map - Generating now..")
-				navmesh.BeginGeneration()
-
-			end
-		end
-	end)
-end)
