@@ -8,8 +8,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "IMI Galil"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "v"
 
 	killicon.AddFont( "weapon_galil", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -30,6 +29,8 @@ SWEP.UseHands			= true
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 2
+SWEP.SlotPos			= 9
 
 SWEP.Primary.Sound			= Sound( "Weapon_galil.Single" )
 SWEP.Primary.Recoil			= 2.6
@@ -38,7 +39,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.017
 SWEP.Primary.ClipSize		= 35
 SWEP.Primary.Delay			= 0.08
-SWEP.Primary.DefaultClip	= 35
+SWEP.Primary.DefaultClip	= 125
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "ar2"
 

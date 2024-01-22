@@ -8,9 +8,13 @@ CLASS.PlayerModel		= {"models/player/phoenix.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_glock" )
-pl:GiveAmmo( 120 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )
@@ -31,9 +35,13 @@ CLASS.PlayerModel		= {"models/player/leet.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_glock" )
-pl:GiveAmmo( 120 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )
@@ -54,9 +62,13 @@ CLASS.PlayerModel		= {"models/player/arctic.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_glock" )
-pl:GiveAmmo( 120 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )
@@ -75,9 +87,13 @@ CLASS.PlayerModel		= {"models/player/guerilla.mdl"}
 
 function CLASS:Loadout( pl )
 
-pl:Give( "weapon_knife" )
 pl:Give( "weapon_glock" )
-pl:GiveAmmo( 120 , "Pistol", true )
+pl:Give( "weapon_knife" )
+pl:GiveAmmo( 60, "smg1", true )
+pl:GiveAmmo( 60, "ar2", true )
+pl:GiveAmmo( 7, "357", true )
+pl:GiveAmmo( 10, "Buckshot", true )
+
 end
 
 function CLASS:OnSpawn( pl )

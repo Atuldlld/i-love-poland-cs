@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "MP5"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "x"
 
 	killicon.AddFont( "weapon_mp5navy", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -30,6 +29,8 @@ SWEP.WorldModel			= "models/weapons/w_smg_mp5.mdl"
 SWEP.ViewModelFlip		= false
 SWEP.ViewModelFOV		= 55
 SWEP.UseHands 			= true
+SWEP.Slot				= 2
+SWEP.SlotPos			= 15
 
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
@@ -41,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.02
 SWEP.Primary.ClipSize		= 30
 SWEP.Primary.Delay			= 0.08
-SWEP.Primary.DefaultClip	= 30
+SWEP.Primary.DefaultClip	= 150
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "smg1"
 

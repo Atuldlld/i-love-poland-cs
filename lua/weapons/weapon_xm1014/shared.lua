@@ -8,8 +8,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "Automatic Shotgun"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "B"
 
 
@@ -29,7 +28,8 @@ SWEP.WorldModel			= "models/weapons/w_shot_xm1014.mdl"
 SWEP.UseHands			= true
 SWEP.ViewModelFlip		= false
 SWEP.ViewModelFOV		= 54
-
+SWEP.Slot				= 2
+SWEP.SlotPos			= 24
 SWEP.Weight				= 10
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
@@ -41,7 +41,7 @@ SWEP.Primary.NumShots		= 6
 SWEP.Primary.Cone			= 0.09
 SWEP.Primary.ClipSize		= 7
 SWEP.Primary.Delay			= 0.25
-SWEP.Primary.DefaultClip	= 7
+SWEP.Primary.DefaultClip	= 39
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "buckshot"
 
