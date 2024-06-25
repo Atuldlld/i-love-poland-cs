@@ -127,12 +127,12 @@ function SWEP:Initialize()
 	self.IronAjust = 0
 	self.IronAjustMin = 0
 
-	if (self.Owner:GetNWBool("HasDeadEye") == true) then
-		self:DeadEye()
-	end
-	if (self.Owner:GetNWBool("HasPap") == true) then
-		self:PackAPunch()
-	end
+	-- if (self.Owner:GetNWBool("HasDeadEye") == true) then
+	-- 	self:DeadEye()
+	-- end
+	-- if (self.Owner:GetNWBool("HasPap") == true) then
+	-- 	self:PackAPunch()
+	-- end
 
 	self.Reloadaftershoot = 0
 	self.nextreload = 0

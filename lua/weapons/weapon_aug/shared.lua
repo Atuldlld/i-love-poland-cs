@@ -8,8 +8,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "Bullpup"
 	SWEP.Author				= "oTvErTkA"
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 1
+
 	SWEP.IconLetterCSS		= "e"
 
 	killicon.AddFont( "weapon_aug", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -32,6 +31,8 @@ SWEP.UseHands			= true
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 2
+SWEP.SlotPos			= 2
 
 SWEP.Primary.Sound			= Sound( "weapon_aug.Single" )
 SWEP.Primary.Recoil			= 3
@@ -40,7 +41,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.01
 SWEP.Primary.ClipSize		= 30
 SWEP.Primary.Delay			= 0.09
-SWEP.Primary.DefaultClip	= 30
+SWEP.Primary.DefaultClip	= 120
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "ar2"
 

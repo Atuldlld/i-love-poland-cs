@@ -10,8 +10,7 @@ if ( CLIENT ) then
 	SWEP.PrintName			= "Desert Eagle"
 	SWEP.Author				= ""
 
-	SWEP.Slot				= 1
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS			= "f"
 
 	killicon.AddFont( "weapon_deagle", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -33,6 +32,8 @@ SWEP.ViewModelFOV		= 45
 SWEP.Weight				= 5
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
+SWEP.Slot				= 1
+SWEP.SlotPos			= 0
 
 SWEP.Primary.Sound			= Sound( "Weapon_Deagle.Single" )
 SWEP.Primary.Recoil			= 7
@@ -41,7 +42,7 @@ SWEP.Primary.NumShots		= 1
 SWEP.Primary.Cone			= 0.01
 SWEP.Primary.ClipSize		= 7
 SWEP.Primary.Delay			= 0.3
-SWEP.Primary.DefaultClip	= 7
+SWEP.Primary.DefaultClip	= 42
 SWEP.Primary.Automatic		= false
 SWEP.Primary.Ammo			= "357"
 

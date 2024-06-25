@@ -10,8 +10,7 @@ if ( CLIENT ) then
 
 	SWEP.PrintName			= "M249"
 	SWEP.Author				= ""
-	SWEP.Slot				= 0
-	SWEP.SlotPos			= 0
+
 	SWEP.IconLetterCSS		= "z"
 
 	killicon.AddFont( "weapon_m249", "CSKillIcons", SWEP.IconLetterCSS, Color( 255, 80, 0, 255 ) )
@@ -30,18 +29,19 @@ SWEP.WorldModel			= "models/weapons/w_mach_m249para.mdl"
 SWEP.ViewModelFOV		= 55
 SWEP.UseHands			= true
 SWEP.ViewModelFlip		= false
-
-SWEP.Weight				= 5
+SWEP.Slot				= 2
+SWEP.SlotPos			= 0
+SWEP.Weight				= 13
 SWEP.AutoSwitchTo		= false
 SWEP.AutoSwitchFrom		= false
 SWEP.Primary.Sound			= Sound( "Weapon_m249.Single" )
-SWEP.Primary.Recoil			= 6
+SWEP.Primary.Recoil			= .05
 SWEP.Primary.Damage			= 30
 SWEP.Primary.NumShots		= 1
-SWEP.Primary.Cone			= 0.07
+SWEP.Primary.Cone			= 0.28
 SWEP.Primary.ClipSize		= 100
-SWEP.Primary.Delay			= 0.09
-SWEP.Primary.DefaultClip	= 100
+SWEP.Primary.Delay			= 0.36
+SWEP.Primary.DefaultClip	= 300
 SWEP.Primary.Automatic		= true
 SWEP.Primary.Ammo			= "ar2"
 

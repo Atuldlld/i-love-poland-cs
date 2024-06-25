@@ -1,10 +1,14 @@
 GM.Name 	= "Counter-Strike Mini"
 GM.Author 	= "oTvErTkA"
 GM.Email 	= ""
-GM.Website 	= "https://steamcommunity.com/groups/thealium"
+GM.Website 	= "https://steamcommunity.com/profiles/76561198375778469"
 GM.Help		= ""
 
-
+AddCSLuaFile("cl_init.lua")
+AddCSLuaFile("cl_shop.lua")
+if SERVER then
+    include("sv_shop.lua")
+end
 
 GM.Data = {}
 
@@ -35,13 +39,13 @@ GM.TakeFragOnSuicide = true			-- -1 frag on suicide
 GM.MaximumDeathLength = 360			-- Player will respawn if death length > this (can be 0 to disable)
 GM.MinimumDeathLength = 360			-- Player has to be dead for at least this long
 GM.AutomaticTeamBalance = false      -- Teams will be periodically balanced
-GM.ForceJoinBalancedTeams = true	-- Players won't be allowed to join a team if it has more players than another team
+GM.ForceJoinBalancedTeams = false	-- Players won't be allowed to join a team if it has more players than another team
 GM.RealisticFallDamage = true		-- Set to true to use realistic fall damage instead of the fixed 10 damage.
 GM.AddFragsToTeamScore = false		-- Adds player's individual kills to team score (must be team based)
 
 GM.NoAutomaticSpawning = false		-- Players don't spawn automatically when they die, some other system spawns them
 GM.RoundBased = true				-- Round based, like CS
-GM.RoundLength = 300				-- Round length, in seconds
+GM.RoundLength = 301				-- Round length, in seconds
 GM.RoundPreStartTime = 3			-- Preperation time before a round starts
 GM.RoundPostLength = 5				-- Seconds to show the 'x team won!' screen at the end of a round
 GM.RoundEndsWhenOneTeamAlive = true	-- CS Style rules
@@ -88,4 +92,309 @@ function GM:PlayerFootstep(ply, pos, foot, sound, volume, filter )
 	end
 end
 
+hook.Add("PlayerCanPickupWeapon", "RestrictWeaponPickup", function(ply, weapon)
+    local pickupSlot = weapon:GetSlot()
+    if pickupSlot == 1 or pickupSlot == 2  then
+        for _, plyWeapon in ipairs(ply:GetWeapons()) do
+            local plyWeaponSlot = plyWeapon:GetSlot()
+            if plyWeaponSlot == pickupSlot then
+                if ply:KeyPressed(IN_USE) then
+                    ply:DropWeapon(plyWeapon)
+                else
+                    return false
+                end
+            end
+        end
+    end
+end)
+
+
+--buymenu
+
+Shop = {}
+
+Shop.Items = {
+	{
+		name = "Glock 18",
+		classname = "weapon_glock",
+		Wmodel = "models/weapons/w_pist_glock18.mdl",
+		price = 400,
+		description = "",
+	},
+	{
+		name = "USP Tactical",
+		classname = "weapon_usp",
+		Wmodel = "models/weapons/w_pist_usp.mdl",
+		price = 500,
+		description = "",
+	},
+	{
+		name = "P228",
+		classname = "weapon_p228",
+		Wmodel = "models/weapons/w_pist_p228.mdl",
+		price = 600,
+		description = "",
+	},
+	{
+		name = "Desert Eagle",
+		classname = "weapon_deagle",
+		Wmodel = "models/weapons/w_pist_deagle.mdl",
+		price = 650,
+		description = "",
+	},
+	{
+		name = ".40 Dual Elites",
+		classname = "weapon_elite",
+		Wmodel = "models/weapons/w_pist_elite.mdl",
+		price = 800,
+		description = "",
+	},
+}
+
+Shop.ItemsCT = {
+	{
+		name = "Glock 18",
+		classname = "weapon_glock",
+		Wmodel = "models/weapons/w_pist_glock18.mdl",
+		price = 400,
+		description = "",
+	},
+	{
+		name = "USP Tactical",
+		classname = "weapon_usp",
+		Wmodel = "models/weapons/w_pist_usp.mdl",
+		price = 500,
+		description = "",
+	},
+	{
+		name = "P228",
+		classname = "weapon_p228",
+		Wmodel = "models/weapons/w_pist_p228.mdl",
+		price = 600,
+		description = "",
+	},
+	{
+		name = "Desert Eagle",
+		classname = "weapon_deagle",
+		Wmodel = "models/weapons/w_pist_deagle.mdl",
+		price = 650,
+		description = "",
+	},
+	{
+		name = "ES Five-seven",
+		classname = "weapon_fiveseven",
+		Wmodel = "models/weapons/w_pist_fiveseven.mdl",
+		price = 750,
+		description = "",
+	},
+}
+
+--Heavy
+Shop.Items2 = {
+	{
+		name = "Leone 12 Gauge Super",
+		classname = "weapon_m3",
+		Wmodel = "models/weapons/w_shot_m3super90.mdl",
+		price = 1700,
+		description = "",
+	},
+	{
+		name = "LEONE YG1265 Auto",
+		classname = "weapon_xm1014",
+		Wmodel = "models/weapons/w_shot_xm1014.mdl",
+		price = 3000,
+		description = "",
+	},
+	{
+		name = "M249",
+		classname = "weapon_m249",
+		Wmodel = "models/weapons/w_mach_m249para.mdl",
+		price = 5200,
+		description = "",
+	},
+}
+
+--T SMG
+
+Shop.Items3 = {
+	{
+		name = "Ingram Mac-10",
+		classname = "weapon_mac10",
+		Wmodel = "models/weapons/w_smg_mac10.mdl",
+		price = 1400,
+		description = "",
+	},
+	{
+		name = "K&M Sub-Machine Gun",
+		classname = "weapon_mp5navy",
+		Wmodel = "models/weapons/w_smg_mp5.mdl",
+		price = 1500,
+		description = "",
+	},
+		{
+		name = "UMP 45",
+		classname = "weapon_ump45",
+		Wmodel = "models/weapons/w_smg_ump45.mdl",
+		price = 1700,
+		description = "",
+	},
+	{
+		name = "P90",
+		classname = "weapon_p90",
+		Wmodel = "models/weapons/w_smg_p90.mdl",
+		price = 2350,
+		description = "",
+	},
+}
+
+--CT SMG
+
+Shop.ItemsCT3 = {
+	{
+		name = "Schmidt Machine Pistol",
+		classname = "weapon_tmp",
+		Wmodel = "models/weapons/w_smg_tmp.mdl",
+		price = 1250,
+		description = "",
+	},
+	{
+		name = "K&M Sub-Machine Gun",
+		classname = "weapon_mp5navy",
+		Wmodel = "models/weapons/w_smg_mp5.mdl",
+		price = 1500,
+		description = "",
+	},
+		{
+		name = "UMP 45",
+		classname = "weapon_ump45",
+		Wmodel = "models/weapons/w_smg_ump45.mdl",
+		price = 1700,
+		description = "",
+	},
+	{
+		name = "P90",
+		classname = "weapon_p90",
+		Wmodel = "models/weapons/w_smg_p90.mdl",
+		price = 2350,
+		description = "",
+	},
+}
+
+--Т RIFLE
+
+Shop.Items4 = {
+	{
+		name = "IDF Defender",
+		classname = "weapon_galil",
+		Wmodel = "models/weapons/w_rif_galil.mdl",
+		price = 2000,
+		description = "",
+	},
+	{
+		name = "CV-47",
+		classname = "weapon_ak47",
+		Wmodel = "models/weapons/w_rif_ak47.mdl",
+		price = 2500,
+		description = "",
+	},
+	{
+		name = "Schmidt Scout",
+		classname = "weapon_scout",
+		Wmodel = "models/weapons/w_snip_scout.mdl",
+		price = 2750,
+		description = "",
+	},
+	{
+		name = "Krieg 552",
+		classname = "weapon_sg552",
+		Wmodel = "models/weapons/w_rif_sg552.mdl",
+		price = 3500,
+		description = "",
+	},
+	{
+		name = "Magnum Sniper Rifle",
+		classname = "weapon_awp",
+		Wmodel = "models/weapons/w_snip_awp.mdl",
+		price = 4750,
+		description = "",
+	},
+	{
+		name = "D3/AU-1",
+		classname = "weapon_g3sg1",
+		Wmodel = "models/weapons/w_snip_g3sg1.mdl",
+		price = 5000,
+		description = "",
+	},
+}
+
+--CT RIFLLE
+
+Shop.ItemsCT4 = {
+	{
+		name = "Clarion 5.56",
+		classname = "weapon_famas",
+		Wmodel = "models/weapons/w_rif_famas.mdl",
+		price = 2050,
+		description = "",
+	},
+	{
+		name = "Schmidt Scout",
+		classname = "weapon_scout",
+		Wmodel = "models/weapons/w_snip_scout.mdl",
+		price = 2750,
+		description = "",
+	},
+	{
+		name = "Maverick Colt M4A1 Carbine",
+		classname = "weapon_m4a1",
+		Wmodel = "models/weapons/w_rif_m4a1.mdl",
+		price = 3100,
+		description = "",
+	},
+	{
+		name = "Bullpup",
+		classname = "weapon_aug",
+		Wmodel = "models/weapons/w_rif_aug.mdl",
+		price = 3500,
+		description = "",
+	},
+	{
+		name = "Krieg 550 Commando",
+		classname = "weapon_sg550",
+		Wmodel = "models/weapons/w_snip_sg550.mdl",
+		price = 4200,
+		description = "",
+	},
+	{
+		name = "Magnum Sniper Rifle",
+		classname = "weapon_awp",
+		Wmodel = "models/weapons/w_snip_awp.mdl",
+		price = 4750,
+		description = "",
+	},
+}
+
+Shop.Items5 = {
+	{
+		name = "Световая граната",
+		classname = "weapon_flashbang",
+		Wmodel = "models/weapons/w_eq_flashbang.mdl",
+		price = 200,
+		description = "Издает громкий звук и ослепляет противника.",
+	},
+	{
+		name = "Осколочная граната",
+		classname = "weapon_hegrenade",
+		Wmodel = "models/weapons/w_eq_fraggrenade.mdl",
+		price = 400,
+		description = "Граната большой мощности.",
+	},
+	{
+		name = "Дымовая граната",
+		classname = "weapon_smokegrenade",
+		Wmodel = "models/weapons/w_eq_smokegrenade.mdl",
+		price = 300,
+		description = "Устройство для отвлечения внимания.",
+	},
+}
 
