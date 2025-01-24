@@ -55,7 +55,7 @@ local disable = {
     ['CHudSuitPower'] =true,
     ['CHudAmmo'] =true,
     ['CHudSecondaryAmmo'] =true,
-	['CHudCrosshair'] =true,
+    ['CHudCrosshair'] =false,
 }
 
 hook.Add( "HUDShouldDraw", "HideHUD", function( name )
