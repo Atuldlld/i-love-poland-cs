@@ -234,9 +234,8 @@ function SWEP:DrawWeaponSelection( x, y, wide, tall, alpha )
     y = y + 10
 	x = x + 10
 	wide = wide - 20
-
-    draw.SimpleText("I", "bfthud-cssicons-blur", x + wide * 0.5, y + tall * 0.5, Color(200, 200, 0, 150), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
-	draw.SimpleText("I", "bfthud-cssicons", x + wide * 0.5, y + tall * 0.5, Color(200, 200, 0), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
+	
+	draw.SimpleText("I", "CSKillIcons", x + wide * 0.5, y + tall * 0.5, Color(200, 200, 0), TEXT_ALIGN_CENTER, TEXT_ALIGN_CENTER)
 
     self:PrintWeaponInfo( x + wide + 20, y + tall * 0.95, alpha )
 end
