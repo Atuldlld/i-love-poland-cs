@@ -44,7 +44,7 @@ GM.RealisticFallDamage = true		-- Set to true to use realistic fall damage inste
 GM.AddFragsToTeamScore = false		-- Adds player's individual kills to team score (must be team based)
 
 GM.NoAutomaticSpawning = false		-- Players don't spawn automatically when they die, some other system spawns them
-GM.RoundBased = true				-- Round based, like CS
+GM.RoundBased = false				-- Round based, like CS
 GM.RoundLength = 301				-- Round length, in seconds
 GM.RoundPreStartTime = 3			-- Preperation time before a round starts
 GM.RoundPostLength = 5				-- Seconds to show the 'x team won!' screen at the end of a round
