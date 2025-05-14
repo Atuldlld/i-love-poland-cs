@@ -1,4 +1,4 @@
-GM.Name 	= "Counter-Strike Mini"
+GM.Name 	= "Counter-Strike poland"
 GM.Author 	= "Lenurdo"
 GM.Email 	= ""
 GM.Website 	= "https://steamcommunity.com/profiles/76561198375778469"
